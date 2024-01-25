@@ -42,17 +42,17 @@ pipeline{
             }
         }*/
 
-        /*   stage('Deploy War file to Tommcat'){
+           stage('Deploy War file to Tommcat'){
             steps{
                sshagent(['tomcat-ssh']) {
                   sh """
                     scp -o StrictHostKeyChecking=no target/*.war ubuntu@13.233.78.237:/opt/tomcat-9/webapps
-                    ssh -o StrictHostKeyChecking=no ubuntu@13.233.78.237 /opt/tomcat-9/bin/shutdown.sh
-                    ssh -o StrictHostKeyChecking=no ubuntu@13.233.78.237 /opt/tomcat-9/bin/startup.sh
+                    ssh -o StrictHostKeyChecking=no ubuntu@localhost /opt/tomcat-9/bin/shutdown.sh
+                    ssh -o StrictHostKeyChecking=no ubuntu@localhost /opt/tomcat-9/bin/startup.sh
 					
 		          """          
                }
             }
-        }*/
+        }
    }
 }
