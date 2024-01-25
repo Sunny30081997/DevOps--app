@@ -14,15 +14,15 @@ pipeline{
                 sh 'mvn clean package'
             }
         }
-        stage('Generate sonarqube-analysis'){
+       /* stage('Generate sonarqube-analysis'){
             steps{
                 withSonarQubeEnv(installationName: 'sonarqube', credentialsId: 'my-token') {
                  sh 'mvn sonar:sonar'
                 }
             }
-        }
+        }*/
 
-          stage('Upload War file to Nexus'){
+        /*  stage('Upload War file to Nexus'){
             steps{
              nexusArtifactUploader artifacts: [
                  [
@@ -40,9 +40,9 @@ pipeline{
             repository: 'Ram-repos', 
             version: '0.1'
             }
-        }
+        }*/
 
-           stage('Deploy War file to Tommcat'){
+        /*   stage('Deploy War file to Tommcat'){
             steps{
                sshagent(['tomcat-ssh']) {
                   sh """
@@ -53,6 +53,6 @@ pipeline{
 		          """          
                }
             }
-        }
+        }*/
    }
 }
